@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
@@ -17,7 +18,7 @@ export default function Basket(props) {
             <div className="col-2">
               <button onClick={() => onRemove(item)} className="remove">
                 -
-              </button>{' '}
+              </button>{" "}
               <button onClick={() => onAdd(item)} className="add">
                 +
               </button>
@@ -57,9 +58,11 @@ export default function Basket(props) {
             </div>
             <hr />
             <div className="row">
-              <button onClick={() => alert('Implement Checkout!')}>
-                Checkout
-              </button>
+              <Link to="/checkout">
+                <button>
+                  Checkout
+                </button>
+              </Link>
             </div>
           </>
         )}
